@@ -1,9 +1,5 @@
 # 吳鑽 (Wuzuan) 個人網站
 
-<p align="center">
-  <img src="public/images/avatar.webp" alt="Wuzuan Avatar" width="150">
-</p>
-
 這是一個基於 Node.js 和 Express 的個人網站專案。
 
 ## 安裝與執行
@@ -74,5 +70,17 @@ pm2 start server.js --name "wuzuantw.com"
 ## Nginx 設定
 詳細的 Nginx 反向代理與 SSL 設定教學，請參考 [NGINX_SETUP.md](./NGINX_SETUP.md)。
 
----
-Developed by Wuzuan
+## 開發者
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="public/images/avatar.webp" width="100" alt="Wuzuan"><br>
+      <b>Wuzuan</b>
+    </td>
+    <td align="center">
+      <img src="public/images/friends/Sangege.webp" width="100" alt="Sangege"><br>
+      <b>Sangege</b><br>協助開發
+    </td>
+  </tr>
+</table>
