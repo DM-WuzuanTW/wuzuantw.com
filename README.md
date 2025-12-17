@@ -75,12 +75,16 @@ pm2 start server.js --name "wuzuantw.com"
 <table>
   <tr>
     <td align="center">
-      <img src="public/images/avatar.webp" width="100" alt="Wuzuan"><br>
-      <b>Wuzuan</b>
+      <a href="https://wuzuantw.com">
+        <img src="public/images/avatar.webp" width="100" alt="Wuzuan"><br>
+        <b>Wuzuan</b>
+      </a>
     </td>
     <td align="center">
-      <img src="public/images/friends/Sangege.webp" width="100" alt="Sangege"><br>
-      <b>Sangege</b>
+      <a href="https://sange.ge">
+        <img src="public/images/friends/Sangege.webp" width="100" alt="Sangege"><br>
+        <b>Sangege</b>
+      </a>
     </td>
   </tr>
 </table>
