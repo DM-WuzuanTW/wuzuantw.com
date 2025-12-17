@@ -1,5 +1,9 @@
 # 吳鑽 (Wuzuan) 個人網站
 
+<p align="center">
+  <img src="public/images/avatar.webp" alt="Wuzuan Avatar" width="150">
+</p>
+
 這是一個基於 Node.js 和 Express 的個人網站專案。
 
 ## 安裝與執行
