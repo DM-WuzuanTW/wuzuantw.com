@@ -57,3 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const gravatarImages = document.querySelectorAll('img[data-gravatar-email]');
+    gravatarImages.forEach(img => {
+        const email = img.getAttribute('data-gravatar-email');
+        if (email && email.trim() !== '') {
+            const hash = md5(email.trim().toLowerCase());
+            img.src = `https://www.gravatar.com/avatar/$%7Bhash%7D?s=200&d=mp`;
+        }
+    });
+});
