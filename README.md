@@ -43,14 +43,14 @@ npm install -g pm2
 
 **啟動服務：**
 ```bash
-pm2 start server.js --name "wuzuan-web"
+pm2 start server.js --name "wuzuantw.com"
 ```
 
 **常用指令：**
 - 查看狀態：`pm2 status`
-- 重啟服務：`pm2 restart wuzuan-web`
-- 停止服務：`pm2 stop wuzuan-web`
-- 查看日誌：`pm2 logs wuzuan-web`
+- 重啟服務：`pm2 restart wuzuantw.com`
+- 停止服務：`pm2 stop wuzuantw.com`
+- 查看日誌：`pm2 logs wuzuantw.com`
 - 開機自啟：`pm2 startup` && `pm2 save`
 
 ## 專案結構
