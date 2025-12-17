@@ -80,7 +80,7 @@ pm2 start server.js --name "wuzuantw.com"
     </td>
     <td align="center">
       <img src="public/images/friends/Sangege.webp" width="100" alt="Sangege"><br>
-      <b>Sangege</b><br>協助開發
+      <b>Sangege</b>
     </td>
   </tr>
 </table>
