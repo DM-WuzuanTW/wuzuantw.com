@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            countdownElement.innerText = `${days}天 ${hours}時 ${minutes}分 ${seconds}秒`;
+            countdownElement.innerHTML = `<span class="countdown-text">${days}天 ${hours}時 ${minutes}分 ${seconds}秒</span>`;
 
             const y = birthday.getFullYear();
             const m = String(birthday.getMonth() + 1).padStart(2, '0');
             const d = String(birthday.getDate()).padStart(2, '0');
 
-            countdownElement.title = `${y}/${m}/${d}`;
+            countdownElement.setAttribute('data-birthday', `${y}/${m}/${d}`);
         }
 
         setInterval(updateCountdown, 1000);
