@@ -239,6 +239,30 @@ ul {
     transform: translateY(-100%);
 }
 
+.footer-domains {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.footer-domain-item {
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.footer-domain-item:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.separator {
+    color: var(--card-border);
+}
+
 .cta-buttons {
     display: flex;
     gap: 20px;
@@ -629,6 +653,8 @@ ul {
     .cta-buttons {
         justify-content: center;
     }
+
+
 
     .avatar-wrapper {
         width: 200px;
