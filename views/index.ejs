@@ -37,6 +37,8 @@
     <noscript>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </noscript>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -86,30 +88,44 @@
 
     <header id="about" class="hero">
         <div class="container hero-content">
-            <div class="hero-text">
-                <span class="greeting" data-aos="fade-up" data-aos-delay="100">Hello, I'm </span>
-                <h1 data-aos="fade-up" data-aos-delay="200">吳鑽 (Wuzuan)</h1>
-                <p class="subtitle" data-aos="fade-up" data-aos-delay="300">
+            <div class="hero-text" data-aos="fade-right">
+                <span class="greeting">Hello, I'm </span>
+                <h1>吳鑽 (Wuzuan)</h1>
+                <p class="subtitle">
                     <span class="highlight">2011</span> 年生 •
                     <span class="highlight">金牛座</span> •
                     <span class="highlight">INTP</span>
                 </p>
-                <p class="description" data-aos="fade-up" data-aos-delay="400">
+                <p class="description">
                     熱愛 Node.js 與 Discord Bot 開發。<br>
                     專注於創造高效、穩定的網路服務。
                 </p>
-                <div class="countdown-container" data-aos="fade-up" data-aos-delay="500">
+                <div class="countdown-container">
                     <p>距離生日還有：</p>
                     <div id="countdown" data-date="04/27">計算中...</div>
                 </div>
-                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
+                <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">聯絡我</a>
                     <a href="#portfolio" class="btn btn-secondary">查看作品</a>
                 </div>
             </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
-                <div class="avatar-wrapper">
-                    <img src="/images/avatar.webp" alt="Wuzuan Avatar">
+
+            <div class="hero-image">
+                <div class="laptop-container">
+                    <div class="laptop">
+                        <div class="laptop-lid">
+                            <div class="laptop-screen">
+                                <video src="/images/other/btop.mp4" autoplay loop muted playsinline class="btop-gif"
+                                    draggable="false"></video>
+                            </div>
+                        </div>
+                        <div class="laptop-base">
+                            <div class="laptop-keyboard">
+                                <div class="keys-grid"></div>
+                            </div>
+                            <div class="laptop-trackpad"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

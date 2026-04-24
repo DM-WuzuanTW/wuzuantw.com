@@ -55,15 +55,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (typeof gsap !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
+        gsap.to(".laptop", {
+            rotateY: "0deg",
+            rotateX: "-5deg",
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1,
+            }
+        });
+
+        gsap.to(".laptop", {
+            y: -15,
+            repeat: -1,
+            yoyo: true,
+            duration: 4,
+            ease: "sine.inOut"
+        });
+
+        const codeSnippets = [
+            'npm i discord.js', 'npm run start', 'pm2 start index.js --name "bot"',
+            'node src/index.js', 'docker-compose up -d', 'npx prisma db push',
+            'git commit -m "feat: add slash commands"', 'npm i @discordjs/rest discord-api-types',
+            'client.login(process.env.TOKEN);', 'new SlashCommandBuilder().setName("ping");',
+            'await interaction.reply({ content: "Pong!" });', 'const guild = await client.guilds.fetch(id);',
+            'interaction.options.getString("target");', 'new ActionRowBuilder().addComponents(button);',
+            'if (!interaction.isChatInputCommand()) return;', 'const member = interaction.member;',
+            'channel.send({ embeds: [embed] });', 'client.on("ready", () => console.log("Bot Online!"));',
+            'new EmbedBuilder().setColor("#5865F2");', 'await interaction.deferReply({ ephemeral: true });',
+            'const collector = channel.createMessageComponentCollector();'
+        ];
+
+        function createFloatingCode() {
+            const span = document.createElement('span');
+            span.className = 'code-float';
+            span.innerText = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            span.style.left = Math.random() * 95 + 'vw';
+            span.style.top = Math.random() * 100 + 'vh';
+            span.style.fontSize = (Math.random() * 0.8 + 0.6) + 'rem';
+            document.body.appendChild(span);
+
+            gsap.to(span, {
+                y: -150,
+                opacity: 0.3,
+                duration: Math.random() * 15 + 10,
+                ease: "none",
+                onComplete: () => span.remove()
+            });
+        }
+
+        setInterval(createFloatingCode, 3000);
+    }
+
+    const keysGrid = document.querySelector('.keys-grid');
+    if (keysGrid) {
+        for (let i = 0; i < 60; i++) {
+            const key = document.createElement('div');
+            key.className = 'key';
+            keysGrid.appendChild(key);
+        }
+    }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const gravatarImages = document.querySelectorAll('img[data-gravatar-email]');
     gravatarImages.forEach(img => {
         const email = img.getAttribute('data-gravatar-email');
         if (email && email.trim() !== '') {
             const hash = md5(email.trim().toLowerCase());
-            img.src = `https://www.gravatar.com/avatar/$%7Bhash%7D?s=200&d=mp`;
+            img.src = `https://www.gravatar.com/avatar/${hash}?s=200&d=mp`;
         }
     });
 });
