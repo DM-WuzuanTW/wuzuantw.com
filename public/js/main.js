@@ -2,11 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownElement = document.getElementById('countdown');
     if (countdownElement) {
         const birthdayDay = 27;
+        const birthdayMonth = 3; // 4月 (0-indexed)
 
         function updateCountdown() {
             const now = new Date();
             let year = now.getFullYear();
-            let birthday = new Date(year, 3, birthdayDay);
+            let birthday = new Date(year, birthdayMonth, birthdayDay);
+            
+            const isBirthday = now.getMonth() === birthdayMonth && now.getDate() === birthdayDay;
+            const container = countdownElement.parentElement;
+            const label = container.querySelector('p');
+
+            if (isBirthday) {
+                container.classList.add('is-birthday');
+                if (label) {
+                    label.innerText = '今天生日啦！';
+                    label.classList.add('birthday-title');
+                }
+                countdownElement.innerHTML = `<span class="countdown-text">HAPPY BIRTHDAY</span>`;
+                countdownElement.classList.add('birthday-text');
+                countdownElement.setAttribute('data-birthday', '祝我生日快樂');
+                return;
+            }
+
+            // Reset styles if it's not birthday anymore
+            container.classList.remove('is-birthday');
+            if (label) {
+                label.innerText = '距離生日還有：';
+                label.classList.remove('birthday-title');
+            }
+            countdownElement.classList.remove('birthday-text');
 
             if (now > birthday) {
                 birthday.setFullYear(year + 1);

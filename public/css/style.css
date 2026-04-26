@@ -183,11 +183,59 @@ ul {
     align-items: center;
     cursor: pointer;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-container.is-birthday {
+    border-color: #ff00ea;
+    box-shadow: 0 0 30px rgba(255, 0, 234, 0.3);
+    background: linear-gradient(135deg, rgba(255, 0, 234, 0.1), rgba(112, 0, 255, 0.1));
+    animation: birthdayPulse 2s infinite ease-in-out;
+}
+
+@keyframes birthdayPulse {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.3); }
+    50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(255, 0, 234, 0.6), 0 0 60px rgba(112, 0, 255, 0.2); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.3); }
+}
+
+.countdown-container.is-birthday::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+.birthday-title {
+    color: #ff00ea !important;
+    font-weight: 800 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 234, 0.5);
 }
 
 .countdown-container:hover {
     border-color: var(--primary-color);
     box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.countdown-container.is-birthday:hover {
+    border-color: #ff00ea;
+    box-shadow: 0 0 40px rgba(255, 0, 234, 0.6);
 }
 
 .countdown-container p {
@@ -207,6 +255,12 @@ ul {
     display: flex;
     justify-content: center;
     min-width: 280px;
+}
+
+#countdown.birthday-text {
+    color: #ff00ea;
+    font-family: var(--font-main);
+    letter-spacing: 2px;
 }
 
 #countdown .countdown-text {
