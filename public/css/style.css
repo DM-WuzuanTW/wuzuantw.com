@@ -190,14 +190,14 @@ ul {
 .countdown-container.is-birthday {
     border-color: #ff00ea;
     box-shadow: 0 0 30px rgba(255, 0, 234, 0.3);
-    background: linear-gradient(135deg, rgba(255, 0, 234, 0.1), rgba(112, 0, 255, 0.1));
+    background: linear-gradient(135deg, rgba(255, 0, 234, 0.05), rgba(112, 0, 255, 0.05));
     animation: birthdayPulse 2s infinite ease-in-out;
 }
 
 @keyframes birthdayPulse {
-    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.3); }
-    50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(255, 0, 234, 0.6), 0 0 60px rgba(112, 0, 255, 0.2); }
-    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.3); }
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.2); }
+    50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(255, 0, 234, 0.4), 0 0 60px rgba(112, 0, 255, 0.1); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.2); }
 }
 
 .countdown-container.is-birthday::before {
