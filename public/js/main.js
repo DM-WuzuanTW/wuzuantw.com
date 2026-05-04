@@ -155,24 +155,29 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         function createFloatingCode() {
+            const existing = document.querySelectorAll('.code-float');
+            if (existing.length > 10) {
+                existing[0].remove();
+            }
+
             const span = document.createElement('span');
             span.className = 'code-float';
             span.innerText = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
             span.style.left = Math.random() * 95 + 'vw';
             span.style.top = Math.random() * 100 + 'vh';
-            span.style.fontSize = (Math.random() * 0.8 + 0.6) + 'rem';
+            span.style.fontSize = (Math.random() * 0.5 + 0.5) + 'rem';
             document.body.appendChild(span);
 
             gsap.to(span, {
-                y: -150,
-                opacity: 0.3,
-                duration: Math.random() * 15 + 10,
+                y: -100,
+                opacity: 0.2,
+                duration: Math.random() * 10 + 8,
                 ease: "none",
                 onComplete: () => span.remove()
             });
         }
 
-        setInterval(createFloatingCode, 3000);
+        setInterval(createFloatingCode, 8000);
     }
 
     const keysGrid = document.querySelector('.keys-grid');
