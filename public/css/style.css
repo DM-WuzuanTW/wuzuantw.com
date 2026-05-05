@@ -736,18 +736,66 @@ ul {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 60px;
+    }
+
     .hero-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 30px;
+        padding: 0;
+        min-height: auto;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .countdown-container {
+        padding: 12px 20px;
+        margin-bottom: 25px;
+    }
+
+    #countdown {
+        font-size: 1.2rem;
+        min-width: 240px;
     }
 
     .cta-buttons {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        text-align: center;
     }
 
 
@@ -871,6 +919,20 @@ ul {
 
     .hamburger span:nth-child(3) {
         top: 18px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background: var(--primary-color);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background: var(--primary-color);
     }
 
     .skills-grid {
@@ -1051,17 +1113,42 @@ ul {
 }
 
 @media (max-width: 992px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 120px;
-    }
-
     .hero-image {
         width: 100%;
         justify-content: center;
-        margin-top: 50px;
-        transform: scale(0.7);
+        margin-top: 30px;
+    }
+
+    .laptop-container {
+        transform: translate(0, 0) scale(0.6);
+        height: 350px;
+        margin-bottom: -50px;
+    }
+
+    .laptop-base {
+        left: -200px;
+        top: -133px;
+        width: 400px;
+        height: 266px;
+    }
+
+    .laptop-lid {
+        left: -200px;
+        width: 400px;
+        height: 253px;
+        border-width: 10px;
+        border-bottom-width: 20px;
+    }
+
+    .keys-grid {
+        gap: 3px;
+        padding: 8px;
+    }
+
+    .laptop-trackpad {
+        width: 110px;
+        height: 60px;
+        bottom: 15px;
     }
 }
 
