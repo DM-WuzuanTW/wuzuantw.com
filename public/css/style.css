@@ -946,6 +946,139 @@ ul {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Mobile Event Cards Layout */
+    .events-grid {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        gap: 16px;
+    }
+
+    .event-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        padding: 20px 24px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .event-logo {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .event-info {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .event-name {
+        font-size: 1.15rem;
+        margin-top: 0;
+    }
+
+    .event-role {
+        font-size: 0.95rem;
+        margin-top: 0;
+    }
+
+    /* Mobile Friends Cards Layout */
+    .friends-grid {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        gap: 16px;
+    }
+
+    .friend-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        padding: 20px 24px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .friend-avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .friend-info {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .friend-id {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+    }
+
+    .friend-name-zh {
+        font-size: 0.95rem;
+        color: #ff4b6e;
+        margin-top: 0;
+    }
+
+    /* Mobile Team Cards Layout */
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        gap: 16px;
+    }
+
+    .team-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        min-width: auto;
+        padding: 20px 24px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .team-logo {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .team-info {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .team-info h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+    }
+
+    .team-info p {
+        font-size: 0.95rem;
+        color: #ff4b6e;
+        margin-top: 0;
+    }
 }
 
 .hero-content {
