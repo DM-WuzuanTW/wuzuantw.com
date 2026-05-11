@@ -630,6 +630,14 @@ ul {
     margin-top: 5px;
 }
 
+.event-role {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #00f2ff;
+    margin-top: 4px;
+    display: block;
+}
+
 /* Friends */
 .friends-grid {
     display: flex;
