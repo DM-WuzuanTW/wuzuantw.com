@@ -483,7 +483,7 @@
         document.querySelectorAll('.skills-grid, .portfolio-grid, .team-grid, .events-grid, .friends-grid').forEach(grid => {
             Array.from(grid.children).forEach((child, index) => {
                 if (!child.hasAttribute('data-aos-delay')) {
-                    child.setAttribute('data-aos-delay', (index + 1) * 100);
+                    child.setAttribute('data-aos-delay', ((index % 5) + 1) * 100);
                 }
             });
         });
