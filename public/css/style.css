@@ -599,7 +599,8 @@ ul {
     overflow: hidden;
 }
 
-.event-logo img {
+.event-logo img,
+.event-logo video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -610,7 +611,8 @@ ul {
     padding: 15px;
 }
 
-.event-logo.logo-contain img {
+.event-logo.logo-contain img,
+.event-logo.logo-contain video {
     object-fit: contain;
 }
 
@@ -643,7 +645,8 @@ ul {
     transform: rotate(5deg);
 }
 
-.event-card:hover .event-logo img {
+.event-card:hover .event-logo img,
+.event-card:hover .event-logo video {
     transform: scale(1.1);
 }
 

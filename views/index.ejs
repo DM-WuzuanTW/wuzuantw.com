@@ -317,6 +317,27 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">參與活動</h2>
             <div class="events-grid">
+                <a href="https://www.computextaipei.com.tw/zh-tw/index.html" target="_blank" class="event-card"
+                    data-aos="zoom-in">
+                    <div class="event-logo">
+                        <video autoplay loop muted playsinline src="/images/events/2026/Computex.mp4"
+                            alt="Computex 2026">
+                        </video>
+                    </div>
+                    <div class="event-info">
+                        <span class="event-name">COMPUTEX 2026</span>
+                        <span class="event-role">專業人士</span>
+                    </div>
+                </a>
+                <a href="https://summit.g0v.tw/2026/" target="_blank" class="event-card" data-aos="zoom-in">
+                    <div class="event-logo logo-contain">
+                        <img src="/images/events/2026/g0v.svg" alt="g0v Summit 2026">
+                    </div>
+                    <div class="event-info">
+                        <span class="event-name">g0v Summit 2026</span>
+                        <span class="event-role">會眾</span>
+                    </div>
+                </a>
                 <a href="https://cybersec.ithome.com.tw/2026/" target="_blank" class="event-card" data-aos="zoom-in">
                     <div class="event-logo">
                         <img src="/images/events/2026/Cybersec.webp" alt="Cybersec 2026">
@@ -327,7 +348,7 @@
                     </div>
                 </a>
                 <a href="https://sitcon.org/2026/" target="_blank" class="event-card" data-aos="zoom-in">
-                    <div class="event-logo">
+                    <div class="event-logo logo-contain">
                         <img src="/images/events/2026/SITCON.webp" alt="SITCON 2026">
                     </div>
                     <div class="event-info">
@@ -354,7 +375,7 @@
                     </div>
                 </a>
                 <a href="https://ysyct.wda.gov.tw/" target="_blank" class="event-card" data-aos="zoom-in">
-                    <div class="event-logo">
+                    <div class="event-logo logo-contain">
                         <img src="/images/events/2025/YS.webp" alt="YS 青年論壇 2025">
                     </div>
                     <div class="event-info">
@@ -525,16 +546,16 @@
             history.scrollRestoration = 'auto';
         }
 
-        window.addEventListener('load', () => {
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
 
+        window.addEventListener('load', () => {
             setTimeout(() => {
                 AOS.refresh();
-            }, 50);
+            }, 100);
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
