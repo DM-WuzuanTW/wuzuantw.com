@@ -33,6 +33,13 @@ ul {
     list-style: none;
 }
 
+img, video {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
