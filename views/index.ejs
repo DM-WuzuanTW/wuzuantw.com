@@ -480,11 +480,21 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.querySelectorAll('.skills-grid, .portfolio-grid, .team-grid, .events-grid, .friends-grid').forEach(grid => {
-            Array.from(grid.children).forEach((child, index) => {
-                if (!child.hasAttribute('data-aos-delay')) {
-                    child.setAttribute('data-aos-delay', ((index % 5) + 1) * 100);
-                }
+        const gridConfigs = {
+            '.skills-grid': 4,
+            '.portfolio-grid': 3,
+            '.events-grid': 5,
+            '.friends-grid': 5,
+            '.team-grid': 2
+        };
+
+        Object.entries(gridConfigs).forEach(([selector, modulo]) => {
+            document.querySelectorAll(selector).forEach(grid => {
+                Array.from(grid.children).forEach((child, index) => {
+                    if (!child.hasAttribute('data-aos-delay')) {
+                        child.setAttribute('data-aos-delay', ((index % modulo) + 1) * 100);
+                    }
+                });
             });
         });
 
