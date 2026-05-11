@@ -33,7 +33,8 @@ ul {
     list-style: none;
 }
 
-img, video {
+img,
+video {
     pointer-events: none;
     user-select: none;
     -webkit-user-drag: none;
@@ -606,11 +607,18 @@ img, video {
     overflow: hidden;
 }
 
-.event-logo img,
+.event-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
 .event-logo video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(0.96);
     transition: var(--transition);
 }
 
@@ -652,9 +660,12 @@ img, video {
     transform: rotate(5deg);
 }
 
-.event-card:hover .event-logo img,
-.event-card:hover .event-logo video {
+.event-card:hover .event-logo img {
     transform: scale(1.1);
+}
+
+.event-card:hover .event-logo video {
+    transform: scale(0.95);
 }
 
 .event-name {
