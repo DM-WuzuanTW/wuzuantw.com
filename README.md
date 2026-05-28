@@ -10,7 +10,7 @@
 ### 1. 下載專案
 將專案下載或是 Clone 到本地端：
 ```bash
-git clone https://github.com/DM-WuzuanTW/wuzuantw.com.git
+git clone https://github.com/wu-zuan/wuzuantw.com.git
 cd wuzuantw.com
 ```
 
