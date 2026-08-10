@@ -28,27 +28,57 @@ document.addEventListener('DOMContentLoaded', () => {
     loadStylesheetWhenVisible('#skills', '/css/devicon.min.css');
     loadStylesheetWhenVisible('#contact', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-    document.querySelectorAll('video[data-src]').forEach(video => {
-        const loadVideo = () => {
-            if (!video.dataset.src) return;
+    const videos = document.querySelectorAll('video');
+    const loadVideo = (video) => {
+        if (video.dataset.src) {
             video.src = video.dataset.src;
             delete video.dataset.src;
             video.load();
+        }
+    };
+
+    if (!('IntersectionObserver' in window)) {
+        videos.forEach(video => {
+            loadVideo(video);
+            if (!video.hasAttribute('data-play-on-hover')) {
+                video.play().catch(() => {});
+            }
+        });
+    } else {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    loadVideo(video);
+                    if (!video.hasAttribute('data-play-on-hover')) {
+                        video.play().catch(() => {});
+                    }
+                } else {
+                    video.pause();
+                }
+            });
+        }, { rootMargin: '200px 0px' });
+
+        videos.forEach(video => videoObserver.observe(video));
+    }
+
+    document.querySelectorAll('video[data-play-on-hover]').forEach(video => {
+        const card = video.closest('.event-card');
+        if (!card) return;
+
+        const play = () => {
+            loadVideo(video);
             video.play().catch(() => {});
         };
+        const pause = () => video.pause();
 
-        if (!('IntersectionObserver' in window)) {
-            loadVideo();
-            return;
+        if (window.matchMedia('(hover: hover)').matches) {
+            card.addEventListener('mouseenter', play);
+            card.addEventListener('mouseleave', pause);
         }
 
-        const observer = new IntersectionObserver((entries) => {
-            if (entries.some(entry => entry.isIntersecting)) {
-                loadVideo();
-                observer.disconnect();
-            }
-        }, { rootMargin: '200px 0px' });
-        observer.observe(video);
+        card.addEventListener('focusin', play);
+        card.addEventListener('focusout', pause);
     });
 
     const isMobile = window.innerWidth <= 768;
@@ -226,7 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
             repeat: -1,
             yoyo: true,
             duration: 4,
-            ease: "sine.inOut"
+            ease: "sine.inOut",
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top bottom",
+                end: "bottom top",
+                toggleActions: "play pause resume pause"
+            }
         });
 
         const codeSnippets = [
