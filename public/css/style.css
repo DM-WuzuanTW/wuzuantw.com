@@ -130,6 +130,23 @@ video {
     align-items: center;
     padding-top: 80px;
     position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+        linear-gradient(90deg, rgba(10, 10, 18, 0.92) 0%, rgba(10, 10, 18, 0.72) 48%, rgba(10, 10, 18, 0.5) 100%),
+        url('/images/wuzuan.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0, 0, 0, 0.82) 72%, rgba(0, 0, 0, 0.28) 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0, 0, 0, 0.82) 72%, rgba(0, 0, 0, 0.28) 90%, transparent 100%);
 }
 
 .hero-content {
@@ -137,6 +154,7 @@ video {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
 }
 
 .hero-text {
