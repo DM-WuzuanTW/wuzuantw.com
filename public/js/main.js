@@ -1,4 +1,91 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const loadStylesheetWhenVisible = (selector, href) => {
+        const target = document.querySelector(selector);
+        if (!target) return;
+
+        const load = () => {
+            if (document.querySelector(`link[href="${href}"]`)) return;
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        };
+
+        if (!('IntersectionObserver' in window)) {
+            load();
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(entry => entry.isIntersecting)) {
+                load();
+                observer.disconnect();
+            }
+        });
+        observer.observe(target);
+    };
+
+    loadStylesheetWhenVisible('#skills', '/css/devicon.min.css');
+    loadStylesheetWhenVisible('#contact', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+    document.querySelectorAll('video[data-src]').forEach(video => {
+        const loadVideo = () => {
+            if (!video.dataset.src) return;
+            video.src = video.dataset.src;
+            delete video.dataset.src;
+            video.load();
+            video.play().catch(() => {});
+        };
+
+        if (!('IntersectionObserver' in window)) {
+            loadVideo();
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(entry => entry.isIntersecting)) {
+                loadVideo();
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px 0px' });
+        observer.observe(video);
+    });
+
+    const isMobile = window.innerWidth <= 768;
+    const gridConfigs = {
+        '.skills-grid': isMobile ? 2 : 4,
+        '.portfolio-grid': 3,
+        '.events-grid': 5,
+        '.friends-grid': 5,
+        '.team-grid': 2
+    };
+
+    Object.entries(gridConfigs).forEach(([selector, modulo]) => {
+        document.querySelectorAll(selector).forEach(grid => {
+            Array.from(grid.children).forEach((child, index) => {
+                if (!child.hasAttribute('data-aos-delay')) {
+                    child.setAttribute('data-aos-delay', ((index % modulo) + 1) * 100);
+                }
+            });
+        });
+    });
+
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'auto';
+    }
+
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => AOS.refresh(), 100);
+        });
+    }
+
     const countdownElement = document.getElementById('countdown');
     if (countdownElement) {
         const birthdayDay = 27;

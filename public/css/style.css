@@ -6,7 +6,7 @@
     --secondary-color: #7000ff;
     --text-color: #e0e0e0;
     --text-muted: #a0a0a0;
-    --font-main: 'Inter', 'Noto Sans TC', sans-serif;
+    --font-main: Inter, 'Noto Sans TC', 'Microsoft JhengHei', system-ui, -apple-system, sans-serif;
     --transition: all 0.3s ease;
 }
 
@@ -141,7 +141,7 @@ video {
     z-index: -1;
     background-image:
         linear-gradient(90deg, rgba(10, 10, 18, 0.92) 0%, rgba(10, 10, 18, 0.72) 48%, rgba(10, 10, 18, 0.5) 100%),
-        url('/images/wuzuan.png');
+        url('/images/wuzuan.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
